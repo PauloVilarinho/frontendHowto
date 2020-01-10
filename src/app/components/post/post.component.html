@@ -1,0 +1,20 @@
+<div class="mb-3 post">
+  <a   [routerLink]="['/post/',post.id]">
+
+    <img
+    class="thumbnail rounded "
+    [src]=" post.image? post.image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiBy7di4PdXPOx2nL7LCTWWCg1n54MS0nSUVRu9yqwiDgscLFR'"
+    alt="">
+    <div class="text">
+      <p>
+        Como
+        <br>
+        <span>
+          {{post.title}}
+        </span>
+      </p>
+    </div>
+  </a>
+
+
+</div>

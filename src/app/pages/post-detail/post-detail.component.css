@@ -1,0 +1,52 @@
+.card{
+  margin: 15px 0;
+  background-color: white;
+  padding: 30px 50px;
+}
+
+.card-part{
+  height: 60px;
+  border-bottom: #999 solid 1px;
+  background-color:#eee;
+  margin:0;
+
+}
+
+.part-counter{
+  height: 60px;
+  color: white;
+  font-weight: bold;
+}
+.part-counter p{
+  justify-content: center;
+  margin: 0px
+}
+
+.card-part div h3{
+  margin-top: 10px;
+}
+
+.part-counter-title{
+  padding-top: 10px;
+}
+
+.card-step{
+  margin-bottom: 15px;
+  background-color: white;
+  padding: 30px 50px;
+}
+
+.title{
+  color:  #222;
+  margin-bottom: 20px;
+}
+
+.step-text{
+  color:black;
+  font-weight: bold;
+}
+
+.step-text span{
+  color: #444;
+  font-weight: lighter;
+}

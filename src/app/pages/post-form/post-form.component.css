@@ -1,0 +1,14 @@
+.card{
+  background-color: white;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+.part-title{
+  margin-top: 40px;
+  border-top: solid 1px #ddd;
+}
+
+.step-title{
+  margin-top: 40px;
+}

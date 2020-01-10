@@ -1,0 +1,7 @@
+<div class="side-block rounded">
+  <h3 class="title">Navegar por Categorias</h3>
+  <div *ngFor="let category of categories" >
+    <a class="category-link" [routerLink]="['/category/',category.id]" >{{category.title}}</a>
+    <br>
+  </div>
+</div>

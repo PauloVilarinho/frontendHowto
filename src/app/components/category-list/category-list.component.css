@@ -1,0 +1,15 @@
+.side-block{
+  background-color: white;
+  padding: 16px;
+}
+
+.title {
+  font-size: 13px;
+  font: bold ;
+  color: #686868;
+  margin-bottom: 10px;
+}
+
+.category-link{
+  color: #89ac6c;
+}

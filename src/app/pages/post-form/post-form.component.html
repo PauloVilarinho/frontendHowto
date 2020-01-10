@@ -1,0 +1,52 @@
+<div class="container">
+  <form class="card rounded" #postform="ngForm" (ngSubmit)="onSubmit(postform)">
+    <h1 class="form-header">{{formHeader}}</h1>
+    <div class="form-group">
+      <label >Title</label>
+      <input name="title" required [(ngModel)]="post.title" type="text" class="form-control" >
+    </div>
+    <div class="form-group">
+      <label >description</label>
+      <input name="description" required [(ngModel)]="post.description" type="text" class="form-control" >
+    </div>
+    <div class="form-group" >
+      <label for="category" class="control-label">
+        Category
+      </label>
+      <select id="category" name="category" appSelectValidator="select" [(ngModel)]="categoryId"
+              class="form-control"  >
+        <option *ngFor="let cat of categories" [value]="cat.id">
+          {{cat.title}}
+        </option>
+      </select>
+    </div>
+
+
+    <div *ngFor="let part of post.parts, let i = index">
+      <h2 class="part-title"> Part {{i + 1}} </h2>
+      <div class="form-group">
+        <label >Title</label>
+        <input name="title" required [(ngModel)]="part.title" type="text" class="form-control" >
+      </div>
+      <button type="button" class="btn btn-outline-primary mb-3 mt-3" (click)="addStep(i)"> Add Step </button>
+
+
+
+      <div *ngFor="let step of part.steps, let i = index">
+        <h3 class="step-title"> Step {{i + 1}} </h3>
+        <div class="form-group">
+          <label >Title</label>
+          <input name="title" required [(ngModel)]="step.title" type="text" class="form-control" >
+        </div>
+        <div class="form-group">
+          <label >description</label>
+          <input name="description" required [(ngModel)]="step.description" type="text" class="form-control" >
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-outline-primary mb-3" (click)="addPart()"> Add Part </button>
+    <button type="submit" class="btn btn-outline-success">create</button>
+  </form>
+</div>
+
+

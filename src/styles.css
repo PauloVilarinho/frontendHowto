@@ -2,3 +2,9 @@
 .bg-green{
   background-color: #89ac6c;
 }
+
+body {
+  font-family: Helvetica,arial,sans-serif;
+  background-color: #ecebe8;
+  -webkit-font-smoothing: antialiased;
+}

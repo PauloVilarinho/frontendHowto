@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div class="card rounded">
+    <h1 class="title"> {{post.title}}</h1>
+    <p> {{post.description}}</p>
+  </div>
+
+  <div *ngFor="let part of post.parts; let i = index">
+
+    <div class="card-part rounded-top row">
+      <div class="part-counter bg-green col-1">
+        <p class="row part-counter-title">Método</p>
+        <p class="row part-counter-number">{{i + 1}}</p>
+      </div>
+      <div class="col-11">
+        <h3 >{{part.title}}</h3>
+
+      </div>
+    </div>
+
+    <div class="card-step" *ngFor="let step of part.steps">
+      <p class="step-text"> {{step.title}}
+        <span> {{step.description}}</span>
+      </p>
+    </div>
+  </div>
+
+
+</div>
