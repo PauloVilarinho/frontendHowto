@@ -2,26 +2,26 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
-## Development server
+# HowTo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+FrontEnd da aplicação HowTo <h5><a href="https://github.com/PauloVilarinho/HowTo">HowTo</a></h3>.
 
-## Code scaffolding
+How To é um projeto que tem o intuito de criar tutoriais para tudo, desde escovar os dentes à como ficar rico. Projeto desenvolvido para avaliação da disciplina de programação para a internet 2, ministrada por Ely da Silva Miranda.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Devs
 
-## Build
+<h3><a href="https://github.com/PauloVilarinho">Paulo Vilarinho</a></h3>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+<h3><a href="https://github.com/xispituao">Natanael Silva</a></h3>
 
-## Running unit tests
+## Requisitos
+ 
+Instale e siga os passos desse repositório para rodar o backend dessa aplicação
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<h5><a href="https://github.com/PauloVilarinho/HowTo">HowTo</a></h3>
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+#Youtube Video
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+https://www.youtube.com/watch?v=Hlb4NdSmp30&list=PLjdMJesE5YladcgTpVz9b94m4oNO001Jg
