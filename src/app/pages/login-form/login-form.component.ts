@@ -17,7 +17,7 @@ export class LoginFormComponent implements OnInit {
   onSubmit(loginform: NgForm) {
     if (loginform.valid) {
       this.authService.login(loginform.value);
-      this.router.navigate(['home']);
+      this.router.navigate(['']);
     }
   }
 

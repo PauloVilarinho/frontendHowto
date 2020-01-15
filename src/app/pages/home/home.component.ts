@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
     .subscribe(posts => { this.posts = posts.results; });
     this.categoryService.getCategories()
     .subscribe(categories => { this.categories = categories.results; });
-    this.logged = this.authService.loggedIn();
+    this.authService.loggedIn().subscribe(logged => this.logged = logged);
   }
 
   goToPostForm() {

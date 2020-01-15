@@ -5,6 +5,7 @@ import { PostFormComponent } from './pages/post-form/post-form.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { CategoryPageComponent } from './pages/category-page/category-page.component';
 import { PostDetailComponent } from './pages/post-detail/post-detail.component';
+import { RefreshComponent } from './commons/refresh/refresh.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginFormComponent},
@@ -12,7 +13,7 @@ const routes: Routes = [
   {path: 'category/:id', component: CategoryPageComponent},
   {path: 'post-form/:id', component: PostFormComponent },
   {path: 'post/:id', component: PostDetailComponent  },
-  {path: '', redirectTo: 'home', pathMatch: 'full'}
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
 ];
 
 @NgModule({

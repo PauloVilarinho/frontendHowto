@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PostsService } from '../../services/posts.service';
 import { CategoryService } from '../../services/category.service';
 import { Post } from '../../models/post.models';
@@ -18,10 +19,12 @@ export class PostFormComponent implements OnInit {
 
   post: Post;
   formHeader: string;
+  buttonName: string;
   categories: Array<Category>;
   categoryId: number;
 
-  constructor(private activatedRoute: ActivatedRoute, private postService: PostsService, private categoryService: CategoryService) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute,
+              private postService: PostsService, private categoryService: CategoryService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(param => {
@@ -39,6 +42,11 @@ export class PostFormComponent implements OnInit {
         parts: []
       };
       this.formHeader = 'Create Post';
+      this.buttonName = 'create';
+    } else {
+      this.postService.getPost(id).subscribe(post => this.post = post);
+      this.formHeader = 'Edit Post';
+      this.buttonName = 'update';
     }
 
   }
@@ -62,7 +70,13 @@ export class PostFormComponent implements OnInit {
   }
 
   onSubmit(postform: NgForm) {
+    if (this.post.id === 0) {
     this.postService.createPost(this.post, this.categoryId);
+    this.router.navigate(['']);
+    } else {
+      this.postService.updatePost(this.post, this.categoryId);
+    }
+
   }
 
 }

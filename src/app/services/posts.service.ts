@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Post } from '../models/post.models';
+import { Router } from '@angular/router';
 
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
@@ -10,11 +11,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PostsService {
+
+  constructor(private httpClient: HttpClient, private router: Router) { }
   headers = new HttpHeaders({
     'Content-Type': 'application/json'
 });
 
-  constructor(private httpClient: HttpClient) { }
+
 
   public getPosts(): Observable<any> {
     return this.httpClient.get(`${environment.ApiRoot}/post`);
@@ -22,6 +25,10 @@ export class PostsService {
 
   public getPost(id: number): Observable<any> {
     return this.httpClient.get(`${environment.ApiRoot}/post/${id}`);
+  }
+
+  public deletePost(id: number): Observable<any> {
+    return this.httpClient.delete(`${environment.ApiRoot}/post/${id}`);
   }
 
   public createPost(post: Post, categoryId: number) {
@@ -51,6 +58,34 @@ export class PostsService {
         });
       });
     } );
+    return postResponse;
+
+  }
+
+  public updatePost(post: Post, categoryId: number) {
+    const updatedPost = {
+      title: post.title,
+      description: post.description,
+      categorie: `${environment.ApiRoot}/categorie/${categoryId}`
+    };
+    const postResponse = this.httpClient.put<any>(`${environment.ApiRoot}/post/${post.id}`, Post).subscribe();
+    post.parts.forEach(part => {
+        const updatedPart = {
+          title: part.title,
+        };
+        const partResponse = this.httpClient.put<any>(`${environment.ApiRoot}/part/${part.id}`, updatedPart).subscribe();
+
+        part.steps.forEach(step => {
+            const updatedStep = {
+                title: step.title,
+                description: step.description,
+            };
+            this.httpClient.put<any>(`${environment.ApiRoot}/step/${step.id}`, updatedStep).subscribe();
+          }
+          );
+
+      });
+
     return postResponse;
 
   }

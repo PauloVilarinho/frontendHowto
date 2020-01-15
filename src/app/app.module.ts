@@ -15,6 +15,7 @@ import { PostDetailComponent } from './pages/post-detail/post-detail.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { TokenInterceptorService } from './services/token-intercepter.service';
 import { PostFormComponent } from './pages/post-form/post-form.component';
+import { RefreshComponent } from './commons/refresh/refresh.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PostFormComponent } from './pages/post-form/post-form.component';
     CategoryPageComponent,
     PostDetailComponent,
     LoginFormComponent,
-    PostFormComponent
+    PostFormComponent,
+    RefreshComponent
   ],
   imports: [
     HttpClientModule,

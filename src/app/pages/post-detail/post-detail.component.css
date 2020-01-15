@@ -50,3 +50,9 @@
   color: #444;
   font-weight: lighter;
 }
+
+.button{
+  padding: 0;
+  height: 50px;
+  width: 100px;
+}
